@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlipFile Online | Free PDF & Document Conversion Tools</title>
+    <meta name="description" content="Flip your files for free! Convert PDFs to Word, Excel, JPG, PNG and more. Fast, secure, and easy-to-use online conversion tools.">
+    <meta name="keywords" content="PDF converter, free PDF tools, convert PDF to Word, convert PDF to Excel, unlock PDF, online file conversion">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-green': '#2ECC71',
+                        'navy-blue': '#2C3E50',
+                        'light-blue': '#3498DB',
+                        'bright-red': '#E74C3C',
+                        'accent-blue': '#2980B9',
+                    },
+                    fontFamily: {
+                        'aldrich': ['Aldrich', 'sans-serif'],
+                        'mukta': ['Mukta', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'slide-in': 'slideIn 0.5s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        slideIn: {
+                            '0%': { transform: 'translateY(20px)', opacity: 0 },
+                            '100%': { transform: 'translateY(0)', opacity: 1 },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Analytics & Ad Scripts (Placeholders) -->
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    
+    <!-- Mixpanel Analytics -->
+    <script type="text/javascript">
+        (function(c,a){if(!a.__SV){var b=window;try{var d,m,j,k=b.location,f=k.hash;d=function(a,b){return(m=a.match(RegExp(b+"=([^&]*)")))?m[1]:null};f&&d(f,"state")&&(j=JSON.parse(decodeURIComponent(d(f,"state"))),"mpeditor"===j.action&&(b.sessionStorage.setItem("_mpcehash",f),history.replaceState(j.desiredHash||"",c.title,k.pathname+k.search)))}catch(n){}var l,h;window.mixpanel=a;a._i=[];a.init=function(b,d,g){function c(b,i){var a=i.split(".");2==a.length&&(b=b[a[0]],i=a[1]);b[i]=function(){b.push([i].concat(Array.prototype.slice.call(arguments,
+        0)))}}var e=a;"undefined"!==typeof g?e=a[g]=[]:g="mixpanel";e.people=e.people||[];e.toString=function(b){var a="mixpanel";"mixpanel"!==g&&(a+="."+g);b||(a+=" (stub)");return a};e.people.toString=function(){return e.toString(1)+".people"};l="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+        for(h=0;h<l.length;h++)c(e,l[h]);var f="set set_once union increment append remove del".split(" ");e.getProperty=function(b,a,d,g){g=function(){return g?g.apply(this,arguments):c};return b?a?g():e:b?a?e[d]=a:e[d]=b:void 0};a._i.push([b,d,g])};a.__SV=1.2}})(document,window.mixpanel||[]);
+        
+        // Initialize Mixpanel with your project token
+        mixpanel.init('YOUR_MIXPANEL_TOKEN', {
+            track_pageview: true,
+            persistence: 'localStorage'
+        });
+        
+        // Track page view
+        mixpanel.track('Page View', {
+            'page': 'Homepage',
+            'url': window.location.pathname
+        });
+    </script>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "FlipFile Online",
+        "description": "Free online PDF and document conversion tools",
+        "url": "https://flipfile.online",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "FlipFile",
+            "email": "cyview4u@gmail.com"
+        },
+        "sameAs": [
+            "https://www.youtube.com/c/flipfile",
+            "https://www.tiktok.com/@flipfile",
+            "https://www.facebook.com/flipfile",
+            "https://twitter.com/flipfile",
+            "https://www.linkedin.com/company/flipfile",
+            "https://www.instagram.com/flipfile"
+        ]
+    }
+    </script>
+    
+    <style>
+        /* Custom CSS for enhanced animations and specific styling */
+        * {
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .logo-flip {
+            color: #E74C3C;
+            font-weight: 800;
+        }
+        
+        .logo-file {
+            color: #3498DB;
+            font-weight: 800;
+        }
+        
+        .logo-brackets {
+            color: #2C3E50;
+            font-weight: 800;
+        }
+        
+        .tool-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .search-box:focus {
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+        }
+        
+        .nav-btn {
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* File upload drop zone styling */
+        .drop-zone {
+            border: 3px dashed #3498DB;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+        
+        .drop-zone.active {
+            border-color: #2ECC71;
+            background-color: rgba(46, 204, 113, 0.05);
+        }
+        
+        /* Progress animation */
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        
+        .progress-bar {
+            animation: progress 3.5s ease-in-out forwards;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .mobile-stack {
+                flex-direction: column;
+            }
+            
+            .dashboard-view {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="font-mukta bg-white text-gray-800">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 shadow-lg" style="background-color: #2ECC71;">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Logo Area -->
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="nav-btn bg-white rounded-full p-2">
+                        <i class="fas fa-file-export text-2xl" style="color: #3498DB;"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="font-aldrich text-2xl">
+                            <span class="logo-flip">Flip</span>
+                            <span class="logo-brackets"><></span>
+                            <span class="logo-file">File</span>
+                        </div>
+                        <div class="font-mukta text-white text-sm font-semibold">Flip It Free!</div>
+                    </div>
+                </div>
+                
+                <!-- Search Box (SEO Optimized) -->
+                <div class="w-full md:w-auto mb-4 md:mb-0">
+                    <div class="relative">
+                        <input type="text" 
+                               id="searchTools" 
+                               placeholder="Search for tools (e.g., PDF to Word, JPG to PDF)..." 
+                               class="w-full md:w-96 py-3 px-5 pr-12 rounded-full search-box focus:outline-none shadow-md">
+                        <button class="absolute right-4 top-3 text-gray-500" aria-label="Search tools">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="flex items-center space-x-2">
+                    <a href="#" class="nav-btn bg-white text-gray-800 rounded-full px-5 font-semibold hover:bg-gray-100">
+                        <i class="fas fa-user mr-2"></i> Login
+                    </a>
+                    <a href="#" class="nav-btn bg-white text-gray-800 rounded-full px-5 font-semibold hover:bg-gray-100">
+                        Home
+                    </a>
+                    <a href="#" class="nav-btn bg-white text-gray-800 rounded-full px-5 font-semibold hover:bg-gray-100">
+                        Contact
+                    </a>
+                </nav>
+            </div>
+            
+            <!-- Secondary Navigation -->
+            <div class="flex justify-center mt-4 space-x-4">
+                <a href="#convert-to-pdf" class="nav-btn bg-white text-gray-800 rounded-full px-5 font-semibold hover:bg-gray-100">
+                    Convert To PDF
+                </a>
+                <a href="#convert-from-pdf" class="nav-btn bg-white text-gray-800 rounded-full px-5 font-semibold hover:bg-gray-100">
+                    Convert From PDF
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 text-center text-white" style="background-color: #2C3E50;">
+        <div class="container mx-auto px-4">
+            <h1 class="font-aldrich text-4xl md:text-5xl lg:text-6xl mb-6 animate-slide-in">
+                Fast, Free and Secure Converting Tools for Everyone!
+            </h1>
+            <p class="text-xl mb-10 max-w-3xl mx-auto opacity-90">
+                Convert your files between PDF, Word, Excel, JPG, PNG and more in seconds. 
+                No registration required. Your privacy is guaranteed.
+            </p>
+            
+            <!-- Illustration Section -->
+            <div class="flex justify-center flex-wrap gap-8 my-12">
+                <div class="flex flex-col items-center animate-float" style="animation-delay: 0s;">
+                    <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-2" style="background-color: #E74C3C;">
+                        <i class="fas fa-file-pdf text-3xl text-white"></i>
+                    </div>
+                    <span class="font-semibold">PDF</span>
+                </div>
+                <div class="flex flex-col items-center animate-float" style="animation-delay: 0.2s;">
+                    <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-2" style="background-color: #2ECC71;">
+                        <i class="fas fa-file-word text-3xl text-white"></i>
+                    </div>
+                    <span class="font-semibold">Word</span>
+                </div>
+                <div class="flex flex-col items-center animate-float" style="animation-delay: 0.4s;">
+                    <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-2" style="background-color: #3498DB;">
+                        <i class="fas fa-file-excel text-3xl text-white"></i>
+                    </div>
+                    <span class="font-semibold">Excel</span>
+                </div>
+                <div class="flex flex-col items-center animate-float" style="animation-delay: 0.6s;">
+                    <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-2" style="background-color: #9B59B6;">
+                        <i class="fas fa-image text-3xl text-white"></i>
+                    </div>
+                    <span class="font-semibold">Images</span>
+                </div>
+                <div class="flex flex-col items-center animate-float" style="animation-delay: 0.8s;">
+                    <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-2" style="background-color: #F39C12;">
+                        <i class="fas fa-lock text-3xl text-white"></i>
+                    </div>
+                    <span class="font-semibold">Security</span>
+                </div>
+            </div>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                <a href="#convert-from-pdf" class="bg-white text-navy-blue font-bold py-4 px-8 rounded-full text-lg hover:bg-gray-100 transform hover:scale-105 transition duration-300">
+                    <i class="fas fa-download mr-2"></i> Start Converting Now
+                </a>
+                <a href="#how-it-works" class="border-2 border-white text-white font-bold py-4 px-8 rounded-full text-lg hover:bg-white hover:text-navy-blue transition duration-300">
+                    <i class="fas fa-play-circle mr-2"></i> How It Works
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Unit 1 (Between Hero and Tools) -->
+    <div class="container mx-auto px-4 py-6 no-print">
+        <div class="bg-gray-100 rounded-xl p-8 text-center border-2 border-dashed border-gray-300">
+            <p class="text-gray-600 mb-2">Advertisement</p>
+            <!-- Google AdSense Ad Unit -->
+            <div id="ad-unit-1" class="flex justify-center items-center h-32 bg-gray-200 rounded-lg">
+                <p class="text-gray-500">Ad Unit 1 (728x90 or responsive)</p>
+            </div>
+            <script>
+                // Ad unit initialization
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <!-- Convert From PDF Section -->
+    <section id="convert-from-pdf" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-aldrich text-3xl md:text-4xl text-navy-blue mb-4">
+                    <i class="fas fa-file-export mr-3"></i>Convert From PDF
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                    Transform your PDF documents into editable formats quickly and securely
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- PDF to Word -->
+                <div class="tool-card bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-2xl">
+                    <div class="flex items-center justify-center w-16 h-16 rounded-xl mb-4" style="background-color: #2ECC71;">
+                        <i class="fas fa-file-word text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">PDF to Word</h3>
+                    <p class="text-gray-600 mb-6">Convert PDF files to editable Word documents</p>
+                    <a href="/tools/pdf-to-word" class="inline-block w-full py-3 px-4 text-center font-semibold rounded-lg text-white transition duration-300" style="background-color: #3498DB;">Use Tool</a>
+                </div>
+                
+                <!-- PDF to Excel -->
+                <div class="tool-card bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-2xl">
+                    <div class="flex items-center justify-center w-16 h-16 rounded-xl mb-4" style="background-color: #2ECC71;">
+                        <i class="fas fa-file-excel text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">PDF to Excel</h3>
+                    <p class="text-gray-600 mb-6">Extract tables from PDF to editable Excel sheets</p>
+                    <a href="/tools/pdf-to-excel" class="inline-block w-full py-3 px-4 text-center font-semibold rounded-lg text-white transition duration-300" style="background-color: #3498DB;">Use Tool</a>
+                </div>
+                
+                <!-- PDF to JPG -->
+                <div class="tool-card bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-2xl">
+                    <div class="flex items-center justify-center w-16 h-16 rounded-xl mb-4" style="background-color: #2ECC71;">
+                        <i class="fas fa-image text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">PDF to JPG</h3>
+                    <p class="text-gray-600 mb-6">Convert PDF pages to high-quality JPG images</p>
+                    <a href="/tools/pdf-to-jpg" class="inline-block w-full py-3 px-4 text-center font-semibold rounded-lg text-white transition duration-300" style="background-color: #3498DB;">Use Tool</a>
+                </div>
+                
+                <!-- PDF to PNG -->
+                <div class="tool-card bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-2xl">
+                    <div class="flex items-center justify-center w-16 h-16 rounded-xl mb-4" style="background-color: #2ECC71;">
+                        <i class="fas fa-image text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">PDF to PNG</h3>
+                    <p class="text-gray-600 mb-6">Convert PDF to PNG with transparent background</p>
+                    <a href="/tools/pdf-to-png" class="inline-block w-full py-3 px-4 text-center font-semibold rounded-lg text-white transition duration-300" style="background-color: #3498DB;">Use Tool</a>
+                </div>
+                
+                <!-- Additional tools would be added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Unit 2 (Between Tool Sections) -->
+    <div class="container mx-auto px-4 py-6 no-print">
+        <div class="bg-gray-100 rounded-xl p-8 text-center border-2 border-dashed border-gray-300">
+            <p class="text-gray-600 mb-2">Advertisement</p>
+            <!-- Google AdSense Ad Unit -->
+            <div id="ad-unit-2" class="flex justify-center items-center h-32 bg-gray-200 rounded-lg">
+                <p class="text-gray-500">Ad Unit 2 (Responsive Ad)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Convert To PDF Section -->
+    <section id="convert-to-pdf" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-aldrich text-3xl md:text-4xl text-navy-blue mb-4">
+                    <i class="fas fa-file-import mr-3"></i>Convert To PDF
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                    Create professional PDF files from various formats
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Word to PDF -->
+                <div class="tool-card bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-2xl">
+                    <div class="flex items-center justify-center w-16 h-16 rounded-xl mb-4" style="background-color: #E74C3C;">
+                        <i class="fas fa-file-word text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Word to PDF</h3>
+                    <p class="text-gray-600 mb-6">Convert Word documents to professional PDFs</p>
+                    <a href="/tools/word-to-pdf" class="inline-block w-full py-3 px-4 text-center font-semibold rounded-lg text-white transition duration-300" style="background-color: #3498DB;">Use Tool</a>
+                </div>
+                
+                <!-- Excel to PDF -->
+                <div class="tool-card bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-2xl">
+                    <div class="flex items-center justify-center w-16 h-16 rounded-xl mb-4" style="background-color: #E74C3C;">
+                        <i class="fas fa-file-excel text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Excel to PDF</h3>
+                    <p class="text-gray-600 mb-6">Convert Excel spreadsheets to PDF format</p>
+                    <a href="/tools/excel-to-pdf" class="inline-block w-full py-3 px-4 text-center font-semibold rounded-lg text-white transition duration-300" style="background-color: #3498DB;">Use Tool</a>
+                </div>
+                
+                <!-- JPG to PDF -->
+                <div class="tool-card bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-2xl">
+                    <div class="flex items-center justify-center w-16 h-16 rounded-xl mb-4" style="background-color: #E74C3C;">
+                        <i class="fas fa-image text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">JPG to PDF</h3>
+                    <p class="text-gray-600 mb-6">Convert JPG images to PDF documents</p>
+                    <a href="/tools/jpg-to-pdf" class="inline-block w-full py-3 px-4 text-center font-semibold rounded-lg text-white transition duration-300" style="background-color: #3498DB;">Use Tool</a>
+                </div>
+                
+                <!-- PNG to PDF -->
+                <div class="tool-card bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-2xl">
+                    <div class="flex items-center justify-center w-16 h-16 rounded-xl mb-4" style="background-color: #E74C3C;">
+                        <i class="fas fa-image text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">PNG to PDF</h3>
+                    <p class="text-gray-600 mb-6">Convert PNG images to PDF documents</p>
+                    <a href="/tools/png-to-pdf" class="inline-block w-full py-3 px-4 text-center font-semibold rounded-lg text-white transition duration-300" style="background-color: #3498DB;">Use Tool</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unlock PDF Section -->
+    <section id="unlock-pdf" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-aldrich text-3xl md:text-4xl text-navy-blue mb-4">
+                    <i class="fas fa-lock-open mr-3"></i>Unlock PDF
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                    Remove password protection from PDF files securely
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="tool-card bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="flex items-center justify-center w-32 h-32 rounded-xl mb-6 md:mb-0 md:mr-8" style="background-color: #9B59B6;">
+                            <i class="fas fa-key text-5xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Unlock PDF Files</h3>
+                            <p class="text-gray-600 mb-6">
+                                Securely remove password protection from your PDF documents. Our tool processes files locally in your browser for maximum security.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <a href="/tools/unlock-pdf" class="inline-block py-3 px-8 text-center font-semibold rounded-lg text-white transition duration-300" style="background-color: #9B59B6;">
+                                    <i class="fas fa-lock-open mr-2"></i> Unlock PDF Tool
+                                </a>
+                                <a href="#security" class="inline-block py-3 px-8 text-center font-semibold rounded-lg border-2 border-gray-300 text-gray-700 hover:bg-gray-50 transition duration-300">
+                                    <i class="fas fa-shield-alt mr-2"></i> Security Info
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-aldrich text-3xl md:text-4xl text-navy-blue mb-4">
+                    How It Works
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                    Convert your files in three simple steps
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center p-6">
+                    <div class="flex items-center justify-center w-20 h-20 rounded-full mx-auto mb-6 text-white text-2xl font-bold" style="background-color: #3498DB;">
+                        1
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Upload Your File</h3>
+                    <p class="text-gray-600">
+                        Drag & drop your file or click to browse. We support PDF, Word, Excel, JPG, PNG, and more.
+                    </p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="text-center p-6">
+                    <div class="flex items-center justify-center w-20 h-20 rounded-full mx-auto mb-6 text-white text-2xl font-bold" style="background-color: #2ECC71;">
+                        2
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Process & Convert</h3>
+                    <p class="text-gray-600">
+                        Our secure servers convert your file. Wait 3-5 seconds for processing. Files are deleted after 1 hour.
+                    </p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="text-center p-6">
+                    <div class="flex items-center justify-center w-20 h-20 rounded-full mx-auto mb-6 text-white text-2xl font-bold" style="background-color: #9B59B6;">
+                        3
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Download Result</h3>
+                    <p class="text-gray-600">
+                        Download your converted file instantly. No registration required. 100% free for basic conversions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- File Upload Demo (Interactive) -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Try It Now: File Converter Demo</h3>
+                    
+                    <!-- File Drop Zone -->
+                    <div id="dropZone" class="drop-zone p-12 text-center cursor-pointer mb-8">
+                        <i class="fas fa-cloud-upload-alt text-5xl mb-4" style="color: #3498DB;"></i>
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Drag & Drop Your File Here</h4>
+                        <p class="text-gray-600 mb-4">Or click to browse files. Maximum file size: 50MB</p>
+                        <button id="browseBtn" class="bg-gray-800 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-900 transition duration-300">
+                            <i class="fas fa-folder-open mr-2"></i> Browse Files
+                        </button>
+                        <input type="file" id="fileInput" class="hidden" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png">
+                    </div>
+                    
+                    <!-- Processing Animation (Hidden by default) -->
+                    <div id="processingSection" class="hidden">
+                        <div class="text-center mb-8">
+                            <div class="inline-block animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 mb-4" style="border-color: #2ECC71;"></div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Processing Your File</h4>
+                            <p class="text-gray-600 mb-4">This usually takes 3-5 seconds. Please wait...</p>
+                            
+                            <!-- Progress Bar -->
+                            <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
+                                <div class="progress-bar h-3 rounded-full" style="background-color: #2ECC71;"></div>
+                            </div>
+                            <p class="text-sm text-gray-500">Simulating file conversion process</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Result Section (Hidden by default) -->
+                    <div id="resultSection" class="hidden text-center">
+                        <div class="flex items-center justify-center w-20 h-20 rounded-full mx-auto mb-6" style="background-color: #2ECC71;">
+                            <i class="fas fa-check text-3xl text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-4">File Successfully Converted!</h4>
+                        <p class="text-gray-600 mb-6">Your file has been processed and is ready to download.</p>
+                        <button class="bg-green-500 text-white py-3 px-8 rounded-lg font-semibold hover:bg-green-600 transition duration-300 mr-4">
+                            <i class="fas fa-download mr-2"></i> Download File
+                        </button>
+                        <button id="resetDemo" class="bg-gray-300 text-gray-800 py-3 px-8 rounded-lg font-semibold hover:bg-gray-400 transition duration-300">
+                            Convert Another File
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section with JSON-LD -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="font-aldrich text-3xl md:text-4xl text-navy-blue mb-4">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                    Find answers to common questions about our conversion tools
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Is it safe to convert PDF online?</h3>
+                        <p class="text-gray-600">
+                            Yes, absolutely. We prioritize your security and privacy. All file conversions happen in a secure environment, and files are automatically deleted from our servers after 1 hour. We do not store or share your documents.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Are there any file size limits?</h3>
+                        <p class="text-gray-600">
+                            Free users can convert files up to 50MB. For larger files, consider our premium plans which support files up to 500MB. We also offer batch conversion for premium users.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Do I need to create an account?</h3>
+                        <p class="text-gray-600">
+                            No, you can use all basic conversion tools without registration. However, creating a free account lets you access additional features like conversion history and priority processing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- JSON-LD Structured Data for FAQ -->
+            <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [{
+                    "@type": "Question",
+                    "name": "Is it safe to convert PDF online?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, absolutely. We prioritize your security and privacy. All file conversions happen in a secure environment, and files are automatically deleted from our servers after 1 hour. We do not store or share your documents."
+                    }
+                }, {
+                    "@type": "Question",
+                    "name": "Are there any file size limits?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Free users can convert files up to 50MB. For larger files, consider our premium plans which support files up to 500MB. We also offer batch conversion for premium users."
+                    }
+                }, {
+                    "@type": "Question",
+                    "name": "Do I need to create an account?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No, you can use all basic conversion tools without registration. However, creating a free account lets you access additional features like conversion history and priority processing."
+                    }
+                }]
+            }
+            </script>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-12 pb-8 text-white" style="background-color: #2ECC71;">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Logo & Tagline -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="bg-white rounded-full p-2">
+                            <i class="fas fa-file-export text-2xl" style="color: #3498DB;"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="font-aldrich text-2xl">
+                                <span style="color: #E74C3C;">Flip</span>
+                                <span style="color: #2C3E50;"><></span>
+                                <span style="color: #3498DB;">File</span>
+                            </div>
+                            <div class="font-mukta text-sm font-semibold">Flip It Free!</div>
+                        </div>
+                    </div>
+                    <p class="text-white opacity-90 mb-6">
+                        Simplifying Your Digital Life! Free online tools for all your document conversion needs.
+                    </p>
+                    
+                    <!-- Social Media -->
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-gray-800 hover:bg-gray-200 transition duration-300" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-gray-800 hover:bg-gray-200 transition duration-300" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-gray-800 hover:bg-gray-200 transition duration-300" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-gray-800 hover:bg-gray-200 transition duration-300" aria-label="X (Twitter)">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-gray-800 hover:bg-gray-200 transition duration-300" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-gray-800 hover:bg-gray-200 transition duration-300" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/" class="hover:text-gray-200 transition duration-300">Home</a></li>
+                        <li><a href="#convert-from-pdf" class="hover:text-gray-200 transition duration-300">Convert From PDF</a></li>
+                        <li><a href="#convert-to-pdf" class="hover:text-gray-200 transition duration-300">Convert To PDF</a></li>
+                        <li><a href="#unlock-pdf" class="hover:text-gray-200 transition duration-300">Unlock PDF</a></li>
+                        <li><a href="/blog" class="hover:text-gray-200 transition duration-300">Blog & Guides</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact & Legal -->
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Contact & Legal</h4>
+                    <div class="mb-6">
+                        <p class="mb-2">Have questions or feedback?</p>
+                        <a href="mailto:cyview4u@gmail.com" class="font-semibold hover:text-gray-200 transition duration-300">
+                            <i class="fas fa-envelope mr-2"></i> cyview4u@gmail.com
+                        </a>
+                        <p class="text-sm mt-2 opacity-80">Email support only. No phone support available.</p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="/privacy-policy" class="text-white hover:text-gray-200 transition duration-300">Privacy Policy</a>
+                        <span>|</span>
+                        <a href="/terms-of-service" class="text-white hover:text-gray-200 transition duration-300">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Newsletter Signup -->
+            <div class="bg-white rounded-xl p-6 mb-8">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="mb-4 md:mb-0">
+                        <h4 class="text-xl font-bold text-gray-800">Stay Updated</h4>
+                        <p class="text-gray-600">Get the latest tool updates and conversion tips</p>
+                    </div>
+                    <div class="flex w-full md:w-auto">
+                        <input type="email" placeholder="Your email address" class="py-3 px-4 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 flex-grow md:flex-grow-0 md:w-64">
+                        <button class="bg-navy-blue text-white py-3 px-6 rounded-r-lg font-semibold hover:bg-blue-900 transition duration-300">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-white border-opacity-30 pt-8 text-center">
+                <p>&copy; <span id="currentYear"></span> FlipFile.online. All rights reserved. Files are processed securely and deleted after 1 hour.</p>
+                <p class="text-sm mt-2 opacity-80">This site uses cookies for analytics and personalization. <a href="/privacy-policy" class="underline">Learn more</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Backend Integration JavaScript -->
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // File upload demo functionality
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+        const browseBtn = document.getElementById('browseBtn');
+        const processingSection = document.getElementById('processingSection');
+        const resultSection = document.getElementById('resultSection');
+        const resetDemo = document.getElementById('resetDemo');
+        
+        // Browse button click
+        browseBtn.addEventListener('click', () => {
+            fileInput.click();
+        });
+        
+        // File input change
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length) {
+                simulateFileProcessing();
+            }
+        });
+        
+        // Drag and drop functionality
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, preventDefaults, false);
+        });
+        
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, highlight, false);
+        });
+        
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, unhighlight, false);
+        });
+        
+        function highlight() {
+            dropZone.classList.add('active');
+        }
+        
+        function unhighlight() {
+            dropZone.classList.remove('active');
+        }
+        
+        dropZone.addEventListener('drop', handleDrop, false);
+        
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            
+            if (files.length) {
+                simulateFileProcessing();
+            }
+        }
+        
+        // Simulate file processing (3-5 seconds)
+        function simulateFileProcessing() {
+            // Hide drop zone, show processing
+            dropZone.style.display = 'none';
+            processingSection.classList.remove('hidden');
+            
+            // Track conversion attempt in analytics
+            if (window.mixpanel) {
+                mixpanel.track('Conversion Attempt', {
+                    'tool': 'Demo Converter',
+                    'file_type': 'Demo File'
+                });
+            }
+            
+            // Simulate processing delay (3-5 seconds)
+            setTimeout(() => {
+                processingSection.classList.add('hidden');
+                resultSection.classList.remove('hidden');
+                
+                // Track successful conversion in analytics
+                if (window.mixpanel) {
+                    mixpanel.track('Conversion Complete', {
+                        'tool': 'Demo Converter',
+                        'status': 'success'
+                    });
+                }
+            }, 3500); // 3.5 seconds
+        }
+        
+        // Reset demo
+        resetDemo.addEventListener('click', () => {
+            resultSection.classList.add('hidden');
+            dropZone.style.display = 'block';
+            fileInput.value = '';
+        });
+        
+        // Search functionality
+        const searchInput = document.getElementById('searchTools');
+        searchInput.addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') {
+                const query = this.value.trim();
+                if (query) {
+                    // Track search in analytics
+                    if (window.mixpanel) {
+                        mixpanel.track('Tool Search', {
+                            'query': query
+                        });
+                    }
+                    
+                    // In a real implementation, this would redirect to search results
+                    alert(`Searching for: ${query}\n\nIn a full implementation, this would show relevant tools.`);
+                }
+            }
+        });
+        
+        // IP-based personalization (simulated)
+        function simulateIPPersonalization() {
+            // In a real implementation, you would get the IP from the backend
+            // For demo purposes, we'll simulate different experiences
+            const hour = new Date().getHours();
+            const isDaytime = hour > 6 && hour < 18;
+            
+            if (isDaytime) {
+                document.body.classList.add('daytime-theme');
+            } else {
+                document.body.classList.add('nighttime-theme');
+            }
+            
+            // Store in local storage for returning users
+            if (localStorage.getItem('flipfile_visited')) {
+                console.log('Welcome back to FlipFile!');
+            } else {
+                localStorage.setItem('flipfile_visited', 'true');
+                // First time user experience
+            }
+        }
+        
+        // Initialize IP personalization
+        simulateIPPersonalization();
+        
+        // Ad unit initialization
+        function initializeAdUnits() {
+            // This would be handled by Google AdSense automatically
+            // Here we're just simulating ad loading
+            setTimeout(() => {
+                const adUnits = document.querySelectorAll('[id^="ad-unit-"]');
+                adUnits.forEach(unit => {
+                    unit.innerHTML = '<p class="text-gray-500">Advertisement loaded successfully</p>';
+                });
+            }, 1000);
+        }
+        
+        // Initialize ads after page load
+        window.addEventListener('load', initializeAdUnits);
+    </script>
+</body>
+</html>
